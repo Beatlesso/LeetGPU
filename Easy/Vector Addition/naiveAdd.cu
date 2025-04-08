@@ -1,6 +1,7 @@
 #include "solve.h"
 #include <cuda_runtime.h>
 
+// 最 naive 的版本, 但感觉也不知道如何优化了
 __global__ void vector_add(const float* A, const float* B, float* C, int N) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     if(idx < N) {

@@ -2,7 +2,7 @@
 #include <cuda_runtime.h>
 const int TileSize = 32;
 
-
+// 使用了 Tiling 优化的矩阵乘法
 __global__ void matrix_multiplication_kernel(const float* A, const float* B, float* C, int M, int N, int K) {
     int x = threadIdx.x, y = threadIdx.y;
     int arow = blockIdx.x * blockDim.x + x;
