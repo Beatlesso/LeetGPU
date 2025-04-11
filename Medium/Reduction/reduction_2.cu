@@ -44,4 +44,5 @@ void solve(const float* input, float* output, int N) {
     int blocks = BLOCK * 2;
     int blockPerGrid = (N + blocks - 1) / blocks;
     reduction_kernel<<<blockPerGrid, threadsPerBlock>>>(input, output, N);
+    cudaDeviceSynchronize();
 }
