@@ -1,6 +1,6 @@
 #include "solve.h"
 #include <cuda_runtime.h>
-const int TileSize = 32;
+const int TileSize = 16;
 
 // 使用了 Tiling 优化的矩阵乘法
 __global__ void matrix_multiplication_kernel(const float* A, const float* B, float* C, int M, int N, int K) {
